@@ -48,7 +48,11 @@ function handleRequest(req, res) {
         case "/references":
             return displayReferences(res);    
         case "/reflection":
-            return displayReflection(res);   
+            return displayReflection(res);
+        case "/plansProgress":
+            return displayPlansProgress(res);      
+        case "/projectDescription":
+            return displayProjectDescription(res);   
         default:
             return display404(path, res);
     }
@@ -176,6 +180,30 @@ function displayReflection(res) {
     });
 }
 
+// When someone visits the "http://localhost:3000/" path, this function is run.
+function displayPlansProgress(res) {
+    // Here we use the fs package to read our index.html file
+    fs.readFile(__dirname + "./public/plansProgress.html", function (err, data) {
+        if (err) throw err;
+        // We then respond to the client with the HTML page by specifically telling the browser that we are delivering
+        // an html file.
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(data);
+    });
+}
+
+// When someone visits the "http://localhost:3000/" path, this function is run.
+function displayProjectDescription(res) {
+    // Here we use the fs package to read our index.html file
+    fs.readFile(__dirname + "./public/projectDescription.html", function (err, data) {
+        if (err) throw err;
+        // We then respond to the client with the HTML page by specifically telling the browser that we are delivering
+        // an html file.
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(data);
+    });
+}
+
 // When someone visits any path that is not specifically defined, this function is run.
 function display404(url, res) {
     var myHTML = "<html>" +
@@ -196,7 +224,6 @@ app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
-
 app.get("/careerPlans", function (req, res) {
     res.sendFile(path.join(__dirname, "./public/careerPlans.html"));
 });
@@ -204,7 +231,6 @@ app.get("/careerPlans", function (req, res) {
 app.get("/aiEngineer", function (req, res) {
     res.sendFile(path.join(__dirname, "./public/aiEngineer.html"));
 });
-
 
 app.get("/marketingManager", function (req, res) {
     res.sendFile(path.join(__dirname, "./public/marketingManager.html"));
@@ -232,6 +258,14 @@ app.get("/references", function (req, res) {
 
 app.get("/reflection", function (req, res) {
     res.sendFile(path.join(__dirname, "./public/reflection.html"));
+});
+
+app.get("/plansProgress", function (req, res) {
+    res.sendFile(path.join(__dirname, "./public/plansProgress.html"));
+});
+
+app.get("/projectDescription", function (req, res) {
+    res.sendFile(path.join(__dirname, "./public/projectDescription.html"));
 });
 
 function getDataFromFile() {
@@ -272,8 +306,6 @@ function getDataFromFile() {
         })
     });
 }
-
-
 
 function getcareerPlansFromFile() {
     readcareerPlansFile();
@@ -423,15 +455,11 @@ function getmeetingsFromFile() {
     });
 }
 
-
-
 getDataFromFile();
 getcareerPlansFromFile();
 getreferencesFromFile();
 getmeetingsFromFile();
-
 getReflectionDetails();
-
 
 function readFile() {
     fs.readFile('./db/personal.json', 'utf8', (err, data) => {
@@ -457,7 +485,6 @@ function readFile() {
     });
 }
 
-
 function readcareerPlansFile() {
     fs.readFile('./db/careerPlans.json', 'utf8', (err, data) => {
         if (err) {
@@ -481,8 +508,6 @@ function readcareerPlansFile() {
         }
     });
 }
-
-
 
 function readreferencesDetailsFile() {
     fs.readFile('./db/references.json', 'utf8', (err, data) => {
@@ -531,8 +556,6 @@ function readmeetingsDetailsFile() {
         }
     });
 }
-
-
 
 function readReflectionDetails() {
     fs.readFile('./db/reflection.json', 'utf8', (err, data) => {

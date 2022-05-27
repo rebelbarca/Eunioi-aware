@@ -2,7 +2,6 @@ $(document).ready(function () {
     var personalURL = '/api/references';
     getreferencesDetails();
     
-
     function getreferencesDetails() {
         // Here we run our AJAX call to the OpenWeatherMap API
         $.ajax({
@@ -27,14 +26,10 @@ $(document).ready(function () {
                     var refEl = response[i].reference;
 
                     var displaydiv = $('<div>')
-
-
-
                     var referenceEl = $('<li>');
                     referenceEl.text(refEl);
 
                     var breakEl = $('<hr/>');
-
 
                     $(`#reference`).append(displaydiv);
 
