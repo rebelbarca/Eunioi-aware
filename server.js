@@ -70,6 +70,8 @@ function displayRoot(res) {
     });
 }
 
+
+
 // When someone visits the "http://localhost:3000/" path, this function is run.
 function displaycareerPlans(res) {
     // Here we use the fs package to read our index.html file
