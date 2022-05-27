@@ -85,11 +85,110 @@
                     <hr>
                 </div>
             </div>
-                
+            ​
             <div class="row">
-                <div class="reflectionRow" id="reflection"></div>
-
-
+                <div class="col-md-12">
+                    <p>
+                        There were 16 recommendations that were compiled using available resources to guide and inform the marketing and design aspects of future MHapps. It is not feasible to implement every recommendation into a single app and so the group chose the following recommendations to implement into the application as a starting point:
+                    </p>
+                    <div id="bulletPt01"></div>
+                    <p>
+                        Security is an issue to consider when developing any application. Users want to feel confident that their data is secured and not being misused. The app uses register/ login pages as an access point for users to be able to utilise the features of the app. These pages use check authentication functions to make sure a user has entered their details into the secured SQL database before redirecting them to their profile page. The reason why the app uses these pages other than security is that the user data retrieved from the database and used throughout the app to make useability more personal and fluid. If these authentications were not put in place, then anyone with the url links to the feature pages could access them, defeating the purpose of gathering user data in order to continuously improve and develop the application. 
+                    </p>
+                    <p>
+                        The app has this feature enabled and can be tested. Let us take a situation where a user does not register an account and login through the login page. If the user attempts to access the app features directly via the url links, they will automatically be redirected to the login page requesting the user to register an account. The app uses validation to ensure that the correct type of information is being entered into the database. For example, when the user inputs their information, if they don't input their email in the correct format, the form will recognise this and an error prompt will be presented to the user until the correct format is entered. It is essential that the data be correctly submitted to the database because the tables are set-up to receive predetermined formats. This enables fluid 'get' and 'post' requests between the frontend and backend. Once all fields are entered successfully, the user will be redirected to their profile page.
+                    </p>
+                </div>
+                <div class="col-md-6" id="appPic01">
+                    <img src="assets/images/dhani/app01.jpg" alt="Vegeta" class="img-fluid">
+                </div>
+                <div class="col-md-6" id="appPic02">
+                    <img src="assets/images/dhani/app02.jpg" alt="Vegeta" class="img-fluid">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        At this point in the project stage, the register/login pages are functioning as planned but there is further development that is required due to time constraints. The user data is being stored in local storage instead of being sent to an SQL database, this means that as long as the user does not clear their local storage cache, it will save their login details and the user can logout and log back in without registering for an account again. However, if the server linked to the app is reset due to maintenance or goes down, or the app is not used for an extended period of time, the token will get timed out and the user will have to register their account again.
+                    </p>
+                    <p>
+                        Also, because the user data is not being posted to a database, some validation functions are not operational currently. This includes the app being able to prevent duplicated accounts being registered. There were attempts to include this type of validation on the frontend, it seemed to work at first but after a few cycles of inputting test data, the app began crashing. It is clear that this type of validation is easier to implement when sending and receiving data between the server (backend) and the client (front-end).
+                    </p>
+                    <p>
+                        The accessibility of mobile devices has allowed them to be interwoven into an individual’s daily routine and most of the users have not been diagnosed with a clinical disorder but may suffer similar symptoms. As a result, a developer will exclude a lot of mobile device users if they target specific clinical populations. There will be an increase in willing users if the MHapp addresses preventive strategies to deal with emotional health problems before having to be diagnosed. These features would be more marketable, rigorous, and effective.
+                    </p>
+                    <p>
+                        The landing/ profile page is a feature that ensures the user that they have successfully created and logged into the app. When opening the web application, we planned that the user would be presented with a short gif video demonstrating how the application is utilized just to get new users started. Moving onto the next phase of development, this can be implemented. The page displays their details that were entered during registration. This acknowledges that they logged into their account and not somebody else’s, and now they may begin exploring the features of the app. Further styling will be required and developed as increased numbers of users will be able to provide feedback on their visual and interactive impressions of the app through sample testing groups.
+                    </p>
+                </div>
+                <div class="col-md-12" id="appPic03">
+                    <img src="assets/images/dhani/app03.jpg" alt="Vegeta" class="img-fluid">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        People who are seeking help in a market filled with clinical diagnosis apps can be harmful to them because they will feel labelled from an app that is assuming that they have a clinical disorder even though they might only be experiencing low-level effects. Reducing stigma and acknowledging the continuum of mental health along with the benefits of well-being promotion can increase the likelihood of a user seeking help. This viewpoint is taken into consideration when developing our app where there is no restriction and can be used by clinical and nonclinical populations
+                    </p>
+                    <p>
+                        A feature considered for the application was a google maps page where the user can find other users of the application in their surrounding area for meetups or communication. The feature that utilises google maps has some functions that work but given the timeframe could only take it so far. You enter in your user tag, emotional state, and position on the map to maintain anonymity. This sends the data to a database which then returns a list of users near you reinforcing the idea that you are not alone.
+                    </p>
+                    <p>
+                        The storage is different to the register/ login functions. This user data is sent to a created SQL database, where it is stored and can be modified accordingly without having to input your user location again. At present, the user is able to update their emotional state as this can change according to their current situation.
+                    </p>
+                    <p>
+                        If the user's current location changes, they can remove their entry from the list and input a new set of co-ordinates for their location. Actual names and addresses are not necessary for now as the app is pushing towards a comfortable environment where users are willing to display their emotional state without having to worry about being judged. At the same time they can view other users in proximity who might be experiencing similar emotional states.
+                    </p>
+                </div>
+                <div class="col-md-12" id="appPic04">
+                    <img src="assets/images/dhani/app04.jpg" alt="Vegeta" class="img-fluid">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        There are many directions this feature can take. Some of the current functions require updating and development. Currently there are only three emotional states in the drop-down menu. There will be a variety of emotions which could be added. Another option is to change the drop-down into a user input container where the user can type in how they are feeling, even be able to have multiple emotions listed.
+                    </p>
+                    <p>
+                        The sample data implemented into this prototype only displays a list of locations around the Sydney CBD area. This will be an issue since the google maps feature is dependent on how many users are using the app as well as how widely spread across the country they are. The initial intention is to introduce the app into the public as free until the number of users increases to a number where storing the users databases begins to cost money. There are other features that the user can use while the amount of users gradually increases.
+                    </p>
+                    <p>
+                        The next feature allows multiple users to gather and converse with each other on whatever issues are on their minds in real time. The user is referred to by their user tag which is automatically assigned to them from what they entered when they registered, which eliminates stigma and labelling. This is not limited to conversations between two people which creates a sense of belonging to a community with individuals lifting each other up.
+                    </p>
+                </div>
+                <div class="col-md-12" id="appPic05">
+                    <img src="assets/images/dhani/app05.jpg" alt="Vegeta" class="img-fluid">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        The end result of this feature functions as intended. There were a couple of obstacles to overcome before successful deployment. When researching how to implement this feature, the developer has to be aware that sometimes, the code is written to function correctly on the local host server. Further research and trial and error is required when deploying through an outside server. After some hard work and persistence, the app was deployed successfully. Middleware should be implemented in order to monitor the conversations to make sure nothing is getting too extreme, or inappropriate language is being used. Also, a notification prompt should appear throughout the app if a user joins the real time chat feature so that other users are made aware especially if the user requires urgent communication with someone for whatever reason.
+                    </p>
+                    <p>
+                        As displayed above, the navigation bar (navbar) had to be moved to the bottom of the browser page. As the conversation lines increased down the page, the navbar disappeared and for reasons to be determined, the user could not scroll back up to the top to access the tabs to the other features. A sticky navbar was implemented but this was unable to solve the problem. Further research into this issue would eventually lead to a solution. The primary objective was to implement a functional real time chat feature which was achieved.
+                    </p>
+                    <p>
+                        Technology has enabled an era of instantaneous data transfer which is unbelievably valuable. The last feature is an API (Application Programming Interface) call to articles focused on mental health issues. It is important that users can easily access this information.
+                    </p>
+                </div>
+                <div class="col-md-12" id="appPic06">
+                    <img src="assets/images/dhani/app06.jpg" alt="Vegeta" class="img-fluid">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        This sample API functions as intended and lists up-to-date articles relevant to mental health issues. However, some of the sources require the user to have an account in order to view the entire article. Further development will utilise and implement API's with no restrictions on source content for the users. These API's are available and involve costs but should not be an issue as the popularity of the app increases. 
+                    </p>
+                    <p>
+                        After finishing their session, the user can return to the landing page and logout. Keep in mind that this is a demo application and there are many directions that we can take this app in the development phase. From the six out of sixteen recommendations that were selected in the development of the app, the features implemented address them as an initial concept and has created various pathways that the app can take with further development and funding. The primary goal was to create and deploy a functioning app with some initial features as a starting point.
+                    </p>
+                    <p>
+                        The app is responsive and is suitable for use across various technologies such as mobile phones, tablets and desktops. Styling was not a focus area as this is very subjective depending on the user and this can be developed through feedback. Deployment through Heroku was a concern as it can’t be anticipated how an external source will process the code even though it might function correctly on local host. Overall, the deployment of the app was successful and looking forward to the infinite possibilities and benefits that this app can and will have in the future.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
     <div class="push"></div>
@@ -110,8 +209,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/javaScript/moment.min.js"></script>
-
-    <script type="text/javascript" src="assets/javaScript/reflection.js"></script>
+    <script type="text/javascript" src="assets/javaScript/plansProgress.js"></script>
     <script>
         function myFunction() {
             var x = document.getElementById("collapse");
@@ -121,6 +219,19 @@
                 x.style.display = "block";
             }
         }
+    </script>
+    <script>
+        window.watsonAssistantChatOptions = {
+            integrationID: "8c0c8711-5c95-4a06-b081-2d5f3507a8ec", // The ID of this integration.
+            region: "au-syd", // The region your integration is hosted in.
+            serviceInstanceID: "da15e2cb-f4b9-4601-b863-d74c7e6700c2", // The ID of your service instance.
+            onLoad: function(instance) { instance.render(); }
+          };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js"
+          document.head.appendChild(t);
+        });
     </script>
 
 </body>
