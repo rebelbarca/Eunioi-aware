@@ -30,7 +30,7 @@ Getting Started
 This documentation will assist you in viewing this project. To view the project either open
 the url of the deployed application with the following address in any browser:
 
-
+https://fierce-ocean-78251.herokuapp.com/
 
 Download and clone the repository from GitHub using the following command:
 
