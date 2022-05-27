@@ -29,39 +29,51 @@ $(document).ready(function () {
         "•	express",
         "•	path",
         "•	Procfile",
-        "•	mongoose"
+        "•	mongoose",
+        "•	morgan",
+        "•	dotenv"
     ];
 
     var npmListArr02 = [
-        "•	morgan",
-        "•	dotenv",
         "•	fs",
         "•	require",
         "•	bycryptjs",
         "•	jsonwebtoken",
         "•	passport",
-        "•	validator"
+        "•	validator",
+        "•	Microsoft Office",
+        "•	Visual Studio",
+        "•	Office 365",
+        "•	MS Teams"
     ];
 
-    var codingLanguagesArr = [
-        "•	HTML: HyperText Markup Language that allows the developer to describe pages",
+    var codingLanguagesArr01 = [
+        "•	HTML: HyperText Markup Language that allows the developer to describe pages. The website will use HTML and CSS, with jQuery as the JavaScript library, allowing the website to easily use JavaScript to add interactivity as well as content that updates in a dynamic fashion.",
         "•	CSS: Style Sheet Language that allows the developer to style an HTML document",
         "•	Bootstrap: Library of HTML and CSS files and code https://getbootstrap.com/",
-        "•	API: Application Programming Interface, which is a software intermediary that allows two applications to talk to each other.",
-        "•	Node.js: An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a browser.",
+        "•	API: Application Programming Interface, which is a software intermediary that allows two applications to talk to each other. An API call is being used to retrieve recent mental health articles.",
+        "•	Node.js: An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a browser. will be used as the architecture of the application, allowing for compatibility across multiple platforms and scalable website applications. Alongside node.js, dotenv, passport and socket.io will also be used.",
         "•	Express.js: An open-source web application framework for Node.js",
         "•	Heroku: Is a platform as a service (PaaS) that enables developers to build, run, and operate applications in the cloud",
-        "•	mySQL: A relational database that organises data into one or more data tables in which data types may be related to each other. These relations help structure the data.",
+        "•	mySQL: A relational database that organises data into one or more data tables in which data types may be related to each other. These relations help structure the data. will be used as a database for the application. It will enable features such as adding, processing and accessing data on the server."
+    ]
+
+    var codingLanguagesArr02 = [
         "•	mongoDB: Is a cross-platform document-oriented database program. It uses JSON-like documents with schema.",
         "•	React.js: User Interface (UI) components are used as an efficient way to render webpages. Combining this UI with the speed of JavaScript enables dynamic and responsive user inputs.",
-        "•	Google Maps: a web mapping platform and consumer application offered by Google. It offers satellite imagery, aerial photography, and street maps."
+        "•	Google Maps: a web mapping platform and consumer application offered by Google. It offers satellite imagery, aerial photography, and street maps. This will be used when searching for other users of the app in the general vicinity.",
+        "•	bcrypt will be used as a library in order to hash passwords. This will be useful to ensure users' data is encrypted and security is maintained.",
+        "•	ajax will be used when loading XML and JSON, allowing data to be read from the server, sent to the server as well as updating the webpage without physically reloading the page.",
+        "•	dotenv will be used to create environment variables which will allow the program to configure authentication keys, URLS and passwords in a convenient and secure manner.",  
+        "•	passport will act as the middleware authentication, whilst socket.io will enable real time communication between the client and server."
     ]
     
     getRecommendationsList01();
     getRecommendationsList02();
     getNpmList01();
     getNpmList02();
-    getCodingLanguageList();
+    getCodingLanguageList01();
+    getCodingLanguageList02();
 
     function getRecommendationsList01() {
         $('#recommendationsList01').empty();
@@ -152,13 +164,13 @@ $(document).ready(function () {
         }
     }
 
-    function getCodingLanguageList() {
+    function getCodingLanguageList01() {
         $('#codeLang01').empty();
-        console.log(codingLanguagesArr);
+        console.log(codingLanguagesArr01);
 
         // Log the resulting object
-        for(var i = 0; i < codingLanguagesArr.length; i++) {
-            var codingLangItem = codingLanguagesArr[i];
+        for(var i = 0; i < codingLanguagesArr01.length; i++) {
+            var codingLangItem = codingLanguagesArr01[i];
 
             var displayDiv = $('<div>');
             var listContainerEl = $('<ul>');
@@ -166,6 +178,25 @@ $(document).ready(function () {
             listItemEl.text(codingLangItem)
              
             $('#codeLang01').append(displayDiv);
+            displayDiv.append(listContainerEl);
+            listContainerEl.append(listItemEl)
+        }
+    }
+
+    function getCodingLanguageList02() {
+        $('#codeLang02').empty();
+        console.log(codingLanguagesArr02);
+
+        // Log the resulting object
+        for(var i = 0; i < codingLanguagesArr02.length; i++) {
+            var codingLangItem = codingLanguagesArr02[i];
+
+            var displayDiv = $('<div>');
+            var listContainerEl = $('<ul>');
+            var listItemEl = $('<li>');
+            listItemEl.text(codingLangItem)
+             
+            $('#codeLang02').append(displayDiv);
             displayDiv.append(listContainerEl);
             listContainerEl.append(listItemEl)
         }
