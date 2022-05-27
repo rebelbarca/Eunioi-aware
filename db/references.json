@@ -1,4 +1,5 @@
 [
+
   {
     "sectionId": 0,
     "reference":"ADVI 2022, Benefits, ADVI, viewed 7 April 2022, <https://advi.org.au/driverless-technology/driverless-car-benefits/#:~:text=%20DRIVERLESS%20CAR%20BENEFITS%20%201%20SAFETY.%20The,forms%20a%20baseline%20to%20which%20the...%20More%20>"
@@ -198,5 +199,25 @@
   {
     "sectionId": 49,
     "reference":"Labour Insight Jobs 2018, Skills in Greatest Demand (Specialised Skills), Burning Glass Technology, viewed 7 April 2022, < https://rmit.instructure.com/courses/96673/files/22264779/download?wrap=1 >"
+  },
+  {
+    "sectionId": 50,
+    "reference":"ABS (Australian Bureau of Statistics) (2018) Mental Health, catalogue number 4364.0.55.001, ABS, Canberra, accessed 29 April 2021. https://www.abs.gov.au/statistics/health/mental-health/mental-health/2017-18"
+  },
+  {
+    "sectionId": 51,
+    "reference":"Amy M, Ann-Louise T, Marley H (2022) Best Mental Health Apps, verywellmind website, accessed 30 April 2022. https://www.verywellmind.com/best-mental-health-apps-4692902"
+  },
+  {
+    "sectionId": 52,
+    "reference":"Bakker D, Kazantzis N, Rickwood D & Rickard N (2016) ‘Mental Health Smartphone Apps: Review and Evidence-Based Recommendations for Future Developments’, JMIR Mental Health, 3(1):1-31, doi:10.2196/mental.4984"
+  },
+  {
+    "sectionId": 53,
+    "reference":"Black Dog Institute (2020) Facts & Figures about mental health: Mental Illness in Australia, Black Dog Institute, accessed 29 April 2021. https://www.blackdoginstitute.org.au/wp-content/uploads/2020/04/1-facts_figures.pdf"
+  },
+  {
+    "sectionId": 54,
+    "reference":"Department of Health (2019) Mental illness statistic, Department of Health, Victoria State Government, accessed 29 April 2021. https://www.betterhealth.vic.gov.au/health/servicesandsupport/mental-illness-statistics"
   }
 ]

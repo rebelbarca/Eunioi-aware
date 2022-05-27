@@ -1,9 +1,9 @@
 $(document).ready(function () {
-    var personalURL = '/api/personalityImages';
-    getPersonalityDetails();
+    var personalURL = '/api/careerPlans';
+    getcareerPlans();
     
 
-    function getPersonalityDetails() {
+    function getcareerPlans() {
         // Here we run our AJAX call to the OpenWeatherMap API
         $.ajax({
             url: personalURL,
@@ -16,33 +16,21 @@ $(document).ready(function () {
                 }
             },
             success: function(response) {
-                // $('#carouselDisplay').empty();
                 // Log the queryURL
                 console.log(response);
                 // Log the resulting object
                 
                 for(var i = 0; i < response.length; i++) {
-                    var profileIdEl = response[i].profileId;
-                    var image01El = response[i].profileImage01;
-                    var image02El = response[i].profileImage02;
-                    var image03El = response[i].profileImage03;
+                    var itemIdEl = response[i].sectionId;
                     var para01El = response[i].paragraph01;
                     var para02El = response[i].paragraph02;
                     var para03El = response[i].paragraph03;
+                    var para04El = response[i].paragraph04;
+                    var para05El = response[i].paragraph05;
+                    var para06El = response[i].paragraph06;
+                    var para07El = response[i].paragraph07;
 
-                    var slideDiv01El = $('<div>').addClass('carousel-item img-fluid');
-                    slideDiv01El.attr({'dataIndex': i});
 
-                    var slideDiv02El = $('<div>').addClass('carousel-item img-fluid');
-                    slideDiv02El.attr({'dataIndex': i});
-
-                    var profileImage02El = $('<img>').addClass('d-block w-100');
-                    profileImage02El.css('text-align', 'left');
-                    profileImage02El.attr({'src': image02El, 'alt': `${profileIdEl} slide`});
-
-                    var profileImage03El = $('<img>').addClass('d-block w-100');
-                    profileImage03El.css('text-align', 'left');
-                    profileImage03El.attr({'src': image03El, 'alt': `${profileIdEl} slide`});
 
                     var paragraph01El = $('<p>');
                     paragraph01El.text(para01El);
@@ -50,18 +38,27 @@ $(document).ready(function () {
                     paragraph02El.text(para02El);
                     var paragraph03El = $('<p>');
                     paragraph03El.text(para03El);
+                    var paragraph04El = $('<p>');
+                    paragraph04El.text(para04El);
+                    var paragraph05El = $('<p>');
+                    paragraph05El.text(para05El);
+                    var paragraph06El = $('<p>');
+                    paragraph06El.text(para06El);
+                    var paragraph07El = $('<p>');
+                    paragraph07El.text(para07El);
                     var breakEl = $('<hr/>');
 
-                    $(`#carouselDisplay${i}`).append(slideDiv01El);
-                    $(`#carouselDisplay${i}`).append(slideDiv02El);
-                    slideDiv01El.append(profileImage02El);
-                    slideDiv02El.append(profileImage03El);
-                    $(`#profile${i}`).append(paragraph01El);
-                    $(`#profile${i}`).append(paragraph02El);
-                    $(`#profile${i}`).append(paragraph03El);
-                    $(`#profile${i}`).append(breakEl);
+
+
+                    $(`#careerPlans${i}`).append(paragraph01El);
+                    $(`#careerPlans${i}`).append(paragraph02El);
+                    $(`#careerPlans${i}`).append(paragraph03El);
+                    $(`#careerPlans${i}`).append(paragraph04El);
+                    $(`#careerPlans${i}`).append(paragraph05El);
+                    $(`#careerPlans${i}`).append(paragraph06El);
+                    $(`#careerPlans${i}`).append(paragraph07El);
+                    $(`#careerPlans${i}`).append(breakEl);
                 }
-                // $("#modalBtn").on('click', profileBtn);
                 
             },
             error: function(){

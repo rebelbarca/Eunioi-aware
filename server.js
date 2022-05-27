@@ -31,16 +31,16 @@ function handleRequest(req, res) {
 
         case "/":
             return displayRoot(res);
-        case "/profile":
-            return displayProfile(res);
-        case "/industryData":            
-            return displayIndustryData(res);
-        case "/itInterview":
-            return displayITInterview(res);            
-        case "/idealJob":
-            return displayIdealJob(res);
-        case "/itTech":
-            return displayITTech(res);
+        case "/aiEngineer":            
+            return displayaiEngineer(res);         
+        case "/careerPlans":
+            return displaycareerPlans(res);
+        case "/marketingManager":
+            return displaymarketingManager(res);
+        case "/uxDesigner":
+            return displayuxDesigner(res);
+        case "/softwareDeveloper":
+            return displaysoftwareDeveloper(res);    
         case "/projectIdea":
             return displayProjectIdea(res);
         case "/tools":
@@ -48,7 +48,11 @@ function handleRequest(req, res) {
         case "/references":
             return displayReferences(res);    
         case "/reflection":
-            return displayReflection(res);   
+            return displayReflection(res);
+        case "/plansProgress":
+            return displayPlansProgress(res);      
+        case "/projectDescription":
+            return displayProjectDescription(res);   
         default:
             return display404(path, res);
     }
@@ -67,9 +71,9 @@ function displayRoot(res) {
 }
 
 // When someone visits the "http://localhost:3000/" path, this function is run.
-function displayProfile(res) {
+function displaycareerPlans(res) {
     // Here we use the fs package to read our index.html file
-    fs.readFile(__dirname + "./public/profile.html", function (err, data) {
+    fs.readFile(__dirname + "./public/careerPlans.html", function (err, data) {
         if (err) throw err;
         // We then respond to the client with the HTML page by specifically telling the browser that we are delivering
         // an html file.
@@ -79,9 +83,9 @@ function displayProfile(res) {
 }
 
 // When someone visits the "http://localhost:3000/" path, this function is run.
-function displayIdealJob(res) {
+function displayaiEngineer(res) {
     // Here we use the fs package to read our index.html file
-    fs.readFile(__dirname + "./public/idealJob.html", function (err, data) {
+    fs.readFile(__dirname + "./public/aiEngineer.html", function (err, data) {
         if (err) throw err;
         // We then respond to the client with the HTML page by specifically telling the browser that we are delivering
         // an html file.
@@ -90,10 +94,12 @@ function displayIdealJob(res) {
     });
 }
 
+
+
 // When someone visits the "http://localhost:3000/" path, this function is run.
-function displayIndustryData(res) {
+function displaymarketingManager(res) {
     // Here we use the fs package to read our index.html file
-    fs.readFile(__dirname + "./public/industryData.html", function (err, data) {
+    fs.readFile(__dirname + "./public/marketingManager.html", function (err, data) {
         if (err) throw err;
         // We then respond to the client with the HTML page by specifically telling the browser that we are delivering
         // an html file.
@@ -101,11 +107,10 @@ function displayIndustryData(res) {
         res.end(data);
     });
 }
-
 // When someone visits the "http://localhost:3000/" path, this function is run.
-function displayITInterview(res) {
+function displayuxDesigner(res) {
     // Here we use the fs package to read our index.html file
-    fs.readFile(__dirname + "./public/itInterview.html", function (err, data) {
+    fs.readFile(__dirname + "./public/uxDesigner.html", function (err, data) {
         if (err) throw err;
         // We then respond to the client with the HTML page by specifically telling the browser that we are delivering
         // an html file.
@@ -113,11 +118,10 @@ function displayITInterview(res) {
         res.end(data);
     });
 }
-
 // When someone visits the "http://localhost:3000/" path, this function is run.
-function displayITTech(res) {
+function displaysoftwareDeveloper(res) {
     // Here we use the fs package to read our index.html file
-    fs.readFile(__dirname + "./public/itTech.html", function (err, data) {
+    fs.readFile(__dirname + "./public/softwareDeveloper.html", function (err, data) {
         if (err) throw err;
         // We then respond to the client with the HTML page by specifically telling the browser that we are delivering
         // an html file.
@@ -174,6 +178,30 @@ function displayReflection(res) {
     });
 }
 
+// When someone visits the "http://localhost:3000/" path, this function is run.
+function displayPlansProgress(res) {
+    // Here we use the fs package to read our index.html file
+    fs.readFile(__dirname + "./public/plansProgress.html", function (err, data) {
+        if (err) throw err;
+        // We then respond to the client with the HTML page by specifically telling the browser that we are delivering
+        // an html file.
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(data);
+    });
+}
+
+// When someone visits the "http://localhost:3000/" path, this function is run.
+function displayProjectDescription(res) {
+    // Here we use the fs package to read our index.html file
+    fs.readFile(__dirname + "./public/projectDescription.html", function (err, data) {
+        if (err) throw err;
+        // We then respond to the client with the HTML page by specifically telling the browser that we are delivering
+        // an html file.
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(data);
+    });
+}
+
 // When someone visits any path that is not specifically defined, this function is run.
 function display404(url, res) {
     var myHTML = "<html>" +
@@ -194,24 +222,24 @@ app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
-app.get("/profile", function (req, res) {
-    res.sendFile(path.join(__dirname, "./public/profile.html"));
+app.get("/careerPlans", function (req, res) {
+    res.sendFile(path.join(__dirname, "./public/careerPlans.html"));
 });
 
-app.get("/idealJob", function (req, res) {
-    res.sendFile(path.join(__dirname, "./public/idealJob.html"));
+app.get("/aiEngineer", function (req, res) {
+    res.sendFile(path.join(__dirname, "./public/aiEngineer.html"));
 });
 
-app.get("/industryData", function (req, res) {
-    res.sendFile(path.join(__dirname, "./public/industryData.html"));
+app.get("/marketingManager", function (req, res) {
+    res.sendFile(path.join(__dirname, "./public/marketingManager.html"));
 });
 
-app.get("/itInterview", function (req, res) {
-    res.sendFile(path.join(__dirname, "./public/itInterview.html"));
+app.get("/uxDesigner", function (req, res) {
+    res.sendFile(path.join(__dirname, "./public/uxDesigner.html"));
 });
 
-app.get("/itTech", function (req, res) {
-    res.sendFile(path.join(__dirname, "./public/itTech.html"));
+app.get("/softwareDeveloper", function (req, res) {
+    res.sendFile(path.join(__dirname, "./public/softwareDeveloper.html"));
 });
 
 app.get("/projectIdea", function (req, res) {
@@ -228,6 +256,14 @@ app.get("/references", function (req, res) {
 
 app.get("/reflection", function (req, res) {
     res.sendFile(path.join(__dirname, "./public/reflection.html"));
+});
+
+app.get("/plansProgress", function (req, res) {
+    res.sendFile(path.join(__dirname, "./public/plansProgress.html"));
+});
+
+app.get("/projectDescription", function (req, res) {
+    res.sendFile(path.join(__dirname, "./public/projectDescription.html"));
 });
 
 function getDataFromFile() {
@@ -269,11 +305,11 @@ function getDataFromFile() {
     });
 }
 
-function getPersonalityImagesFromFile() {
-    readPersonalityImagesFile();
+function getcareerPlansFromFile() {
+    readcareerPlansFile();
     // Displays all notes
-    app.get("/api/personalityImages", function (request, response) {
-        fs.readFile('./db/personalityImages.json', 'utf8', (err, data) => {
+    app.get("/api/careerPlans", function (request, response) {
+        fs.readFile('./db/careerPlans.json', 'utf8', (err, data) => {
             if (err) {
                 throw err;
             }
@@ -287,123 +323,10 @@ function getPersonalityImagesFromFile() {
         })
     });
     // Displays a single note, or returns false
-    app.get("/api/personalityImages/:id", function (request, response) {
+    app.get("/api/careerPlans/:id", function (request, response) {
         var chosen = request.params.id;
         console.log(chosen);
-        fs.readFile('./db/personalityImages.json', 'utf8', (err, data) => {
-            if (err) {
-                throw err;
-            }
-            const noteArrayStr = JSON.parse(data);
-            // console.log(noteArrayStr[0].profileId);
-            for (var i = 0; i < noteArrayStr.length; i++) {
-                if (chosen == noteArrayStr[i].profileId) {
-                    return response.json(noteArrayStr[i]);
-                }
-            }
-            return response.json(false);
-        })
-    });
-}
-
-function getidealJobDetailsFromFile() {
-    readidealJobDetailsFile();
-    // Displays all notes
-    app.get("/api/itTech", function (request, response) {
-        fs.readFile('./db/itTech.json', 'utf8', (err, data) => {
-            if (err) {
-                throw err;
-            }
-            const noteArrayStr = JSON.parse(data);
-            // console.log(noteArrayStr);
-            // console.log(noteArrayStr[0].routeName);
-            noteArrayStr.forEach(element => {
-                // console.log(element.routeName);
-            })
-            return response.json(noteArrayStr);
-        })
-    });
-    // Displays a single note, or returns false
-    app.get("/api/itTech/:id", function (request, response) {
-        var chosen = request.params.id;
-        console.log(chosen);
-        fs.readFile('./db/itTech.json', 'utf8', (err, data) => {
-            if (err) {
-                throw err;
-            }
-            const noteArrayStr = JSON.parse(data);
-            // console.log(noteArrayStr[0].profileId);
-            for (var i = 0; i < noteArrayStr.length; i++) {
-                if (chosen == noteArrayStr[i].profileId) {
-                    return response.json(noteArrayStr[i]);
-                }
-            }
-            return response.json(false);
-        })
-    });
-}
-
-
-function getitIndustryFromFile() {
-    readitIndustryFile();
-    // Displays all notes
-    app.get("/api/itIndustry", function (request, response) {
-        fs.readFile('./db/itIndustry.json', 'utf8', (err, data) => {
-            if (err) {
-                throw err;
-            }
-            const noteArrayStr = JSON.parse(data);
-            // console.log(noteArrayStr);
-            // console.log(noteArrayStr[0].routeName);
-            noteArrayStr.forEach(element => {
-                // console.log(element.routeName);
-            })
-            return response.json(noteArrayStr);
-        })
-    });
-    // Displays a single note, or returns false
-    app.get("/api/itIndustry/:id", function (request, response) {
-        var chosen = request.params.id;
-        console.log(chosen);
-        fs.readFile('./db/itIndustry.json', 'utf8', (err, data) => {
-            if (err) {
-                throw err;
-            }
-            const noteArrayStr = JSON.parse(data);
-            // console.log(noteArrayStr[0].profileId);
-            for (var i = 0; i < noteArrayStr.length; i++) {
-                if (chosen == noteArrayStr[i].profileId) {
-                    return response.json(noteArrayStr[i]);
-                }
-            }
-            return response.json(false);
-        })
-    });
-}
-
-
-function getitTechDetailsFromFile() {
-    readitTechDetailsFile();
-    // Displays all notes
-    app.get("/api/idealJob", function (request, response) {
-        fs.readFile('./db/idealJob.json', 'utf8', (err, data) => {
-            if (err) {
-                throw err;
-            }
-            const noteArrayStr = JSON.parse(data);
-            // console.log(noteArrayStr);
-            // console.log(noteArrayStr[0].routeName);
-            noteArrayStr.forEach(element => {
-                // console.log(element.routeName);
-            })
-            return response.json(noteArrayStr);
-        })
-    });
-    // Displays a single note, or returns false
-    app.get("/api/idealJob/:id", function (request, response) {
-        var chosen = request.params.id;
-        console.log(chosen);
-        fs.readFile('./db/idealJob.json', 'utf8', (err, data) => {
+        fs.readFile('./db/careerPlans.json', 'utf8', (err, data) => {
             if (err) {
                 throw err;
             }
@@ -530,53 +453,11 @@ function getmeetingsFromFile() {
     });
 }
 
-function getinterviewDetails() {
-    readInterviewDetailsFile();
-    // Displays all notes
-    app.get("/api/interview", function (request, response) {
-        fs.readFile('./db/interview.json', 'utf8', (err, data) => {
-            if (err) {
-                throw err;
-            }
-            const noteArrayStr = JSON.parse(data);
-            // console.log(noteArrayStr);
-            // console.log(noteArrayStr[0].routeName);
-            noteArrayStr.forEach(element => {
-                // console.log(element.routeName);
-            })
-            return response.json(noteArrayStr);
-        })
-    });
-    // Displays a single note, or returns false
-    app.get("/api/interview/:id", function (request, response) {
-        var chosen = request.params.id;
-        console.log(chosen);
-        fs.readFile('./db/interview.json', 'utf8', (err, data) => {
-            if (err) {
-                throw err;
-            }
-            const noteArrayStr = JSON.parse(data);
-            console.log(noteArrayStr[0].profileId);
-            for (var i = 0; i < noteArrayStr.length; i++) {
-                if (chosen == noteArrayStr[i].profileId) {
-                    return response.json(noteArrayStr[i]);
-                }
-            }
-            return response.json(false);
-        })
-    });
-}
-
 getDataFromFile();
-getPersonalityImagesFromFile();
-getidealJobDetailsFromFile();
-getitTechDetailsFromFile();
-getitIndustryFromFile();
+getcareerPlansFromFile();
 getreferencesFromFile();
 getmeetingsFromFile();
-getinterviewDetails();
 getReflectionDetails();
-
 
 function readFile() {
     fs.readFile('./db/personal.json', 'utf8', (err, data) => {
@@ -602,32 +483,8 @@ function readFile() {
     });
 }
 
-function readPersonalityImagesFile() {
-    fs.readFile('./db/personalityImages.json', 'utf8', (err, data) => {
-        if (err) {
-            throw err;
-        }
-        else if (!data) {
-            console.log('No array in saveFile please create new array!');
-            const noteArray = [];
-            const newDataArr = JSON.stringify(noteArray, null, 4)
-    
-            fs.writeFile("./db/personalityImages.json", newDataArr, function (err) {
-                if (err) {
-                    return console.log(err);
-                }
-            });
-            // console.log(newDataArr);
-        }
-        else {
-        const noteArrayStr = JSON.parse(data);
-        // console.log(noteArrayStr);
-        }
-    });
-}
-
-function readidealJobDetailsFile() {
-    fs.readFile('./db/idealJob.json', 'utf8', (err, data) => {
+function readcareerPlansFile() {
+    fs.readFile('./db/careerPlans.json', 'utf8', (err, data) => {
         if (err) {
             throw err;
         }
@@ -637,54 +494,6 @@ function readidealJobDetailsFile() {
             const newDataArr = JSON.stringify(noteArray, null, 4)
     
             fs.writeFile("./db/idealJob.json", newDataArr, function (err) {
-                if (err) {
-                    return console.log(err);
-                }
-            });
-            // console.log(newDataArr);
-        }
-        else {
-        const noteArrayStr = JSON.parse(data);
-        // console.log(noteArrayStr);
-        }
-    });
-}
-
-function readitTechDetailsFile() {
-    fs.readFile('./db/itTech.json', 'utf8', (err, data) => {
-        if (err) {
-            throw err;
-        }
-        else if (!data) {
-            console.log('No array in saveFile please create new array!');
-            const noteArray = [];
-            const newDataArr = JSON.stringify(noteArray, null, 4)
-    
-            fs.writeFile("./db/itTech.json", newDataArr, function (err) {
-                if (err) {
-                    return console.log(err);
-                }
-            });
-            // console.log(newDataArr);
-        }
-        else {
-        const noteArrayStr = JSON.parse(data);
-        // console.log(noteArrayStr);
-        }
-    });
-}
-
-function readitIndustryFile() {
-    fs.readFile('./db/itIndustry.json', 'utf8', (err, data) => {
-        if (err) {
-            throw err;
-        }
-        else if (!data) {
-            console.log('No array in saveFile please create new array!');
-            const noteArray = [];
-            const newDataArr = JSON.stringify(noteArray, null, 4)
-    
-            fs.writeFile("./db/itIndustry.json", newDataArr, function (err) {
                 if (err) {
                     return console.log(err);
                 }
@@ -733,31 +542,6 @@ function readmeetingsDetailsFile() {
             const newDataArr = JSON.stringify(noteArray, null, 4)
     
             fs.writeFile("./db/meetings.json", newDataArr, function (err) {
-                if (err) {
-                    return console.log(err);
-                }
-            });
-            // console.log(newDataArr);
-        }
-        else {
-        const noteArrayStr = JSON.parse(data);
-        // console.log(noteArrayStr);
-        }
-    });
-}
-
-
-function readInterviewDetailsFile() {
-    fs.readFile('./db/interview.json', 'utf8', (err, data) => {
-        if (err) {
-            throw err;
-        }
-        else if (!data) {
-            console.log('No array in saveFile please create new array!');
-            const noteArray = [];
-            const newDataArr = JSON.stringify(noteArray, null, 4)
-    
-            fs.writeFile("./db/interview.json", newDataArr, function (err) {
                 if (err) {
                     return console.log(err);
                 }
